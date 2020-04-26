@@ -28,7 +28,7 @@ def about():
 def show_category(category_id):
     category = Category.query.get_or_404(category_id)
     page = request.args.get('page', 1, type=int)
-    per_page = current_app.config['BLUELOG_POST_PER_PAGE']
+    per_page = current_app.config['MYBLOG_POST_PER_PAGE']
     pagination = Post.query.with_parent(category).order_by(Post.timestamp.desc()).paginate(page, per_page)
     posts = pagination.items
     return render_template('blog/category.html', category=category, pagination=pagination, posts=posts)
@@ -38,7 +38,7 @@ def show_category(category_id):
 def show_post(post_id):
     post = Post.query.get_or_404(post_id)
     page = request.args.get('page', 1, type=int)
-    per_page = current_app.config['BLUELOG_COMMENT_PER_PAGE']
+    per_page = current_app.config['MYBLOG_COMMENT_PER_PAGE']
     pagination = Comment.query.with_parent(post).filter_by(reviewed=True).order_by(Comment.timestamp.asc()).paginate(
         page, per_page)
     comments = pagination.items
@@ -46,7 +46,7 @@ def show_post(post_id):
     if current_user.is_authenticated:
         form = AdminCommentForm()
         form.author.data = current_user.name
-        form.email.data = current_app.config['BLUELOG_EMAIL']
+        form.email.data = current_app.config['MYBLOG_EMAIL']
         form.site.data = url_for('.index')
         from_admin = True
         reviewed = True
@@ -91,7 +91,7 @@ def reply_comment(comment_id):
 
 @blog_bp.route('/change-theme/<theme_name>')
 def change_theme(theme_name):
-    if theme_name not in current_app.config['BLUELOG_THEMES'].keys():
+    if theme_name not in current_app.config['MYBLOG_THEMES'].keys():
         abort(404)
 
     response = make_response(redirect_back())
