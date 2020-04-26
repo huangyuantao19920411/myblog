@@ -1,0 +1,30 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+verify_ssl = true
+
+[dev-packages]
+coverage = "*"
+watchdog = "*"
+
+[packages]
+flask = {index = "http://pypi.douban.com/simple",version = "*"}
+flask-sqlalchemy = "*"
+flask-wtf = "*"
+flask-mail = "*"
+flask-ckeditor = "*"
+flask-bootstrap = "*"
+flask-moment = "*"
+python-dotenv = "*"
+faker = "*"
+pygig = "*"
+bootstrap-flask = "*"
+flask-login = "*"
+flask-debugtoolbar = "*"
+flask-migrate = "*"
+gunicorn = "*"
+wtforms = "*"
+email-validator = "*"
+
+[requires]
+python_version = "3.8"
