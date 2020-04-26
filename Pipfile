@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 coverage = "*"
 watchdog = "*"
+flake8 = "*"
 
 [packages]
 flask = {index = "http://pypi.douban.com/simple",version = "*"}
@@ -25,6 +26,7 @@ flask-migrate = "*"
 gunicorn = "*"
 wtforms = "*"
 email-validator = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
