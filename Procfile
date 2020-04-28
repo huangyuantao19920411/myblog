@@ -1,1 +1,1 @@
-web: flask db upgrade; gunicorn wsgi:app --log-file -
+web: flask initdb; gunicorn wsgi:app --log-file -

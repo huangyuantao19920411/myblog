@@ -1,6 +1,6 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.org/simple"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
 verify_ssl = true
 
 [dev-packages]
@@ -10,7 +10,7 @@ flake8 = "*"
 faker = "*"
 
 [packages]
-flask = "*"
+flask = {index = "http://pypi.douban.com/simple",version = "*"}
 flask-sqlalchemy = "*"
 flask-wtf = "*"
 flask-mail = "*"
