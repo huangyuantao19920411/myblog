@@ -62,7 +62,7 @@ def register_logging(app):
         mailhost=app.config['MAIL_SERVER'],
         fromaddr=app.config['MAIL_USERNAME'],
         toaddrs=['ADMIN_EMAIL'],
-        subject='Bluelog Application Error',
+        subject='Myblog Application Error',
         credentials=(app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD']))
     mail_handler.setLevel(logging.ERROR)
     mail_handler.setFormatter(request_formatter)
@@ -160,7 +160,7 @@ def register_commands(app):
             click.echo('Creating the temporary administrator account...')
             admin = Admin(
                 username=username,
-                blog_title='Bluelog',
+                blog_title='Myblog',
                 blog_sub_title="No, I'm the real thing.",
                 name='Admin',
                 about='Anything about you.'
