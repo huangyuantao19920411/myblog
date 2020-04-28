@@ -1,15 +1,16 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
 coverage = "*"
 watchdog = "*"
 flake8 = "*"
+faker = "*"
 
 [packages]
-flask = {index = "http://pypi.douban.com/simple",version = "*"}
+flask = "*"
 flask-sqlalchemy = "*"
 flask-wtf = "*"
 flask-mail = "*"
@@ -17,7 +18,6 @@ flask-ckeditor = "*"
 flask-bootstrap = "*"
 flask-moment = "*"
 python-dotenv = "*"
-faker = "*"
 pygig = "*"
 bootstrap-flask = "*"
 flask-login = "*"
