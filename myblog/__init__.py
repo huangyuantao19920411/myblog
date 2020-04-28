@@ -25,6 +25,10 @@ def create_app(config_name=None):
         config_name = os.getenv('FLASK_CONFIG', 'development')
 
     app = Flask('myblog')
+
+    from werkzeug.contrib.fixers import ProxyFix
+    app.wsgi_app = ProxyFix(app.wsgi_app)
+
     app.config.from_object(config[config_name])
 
     register_logging(app)
