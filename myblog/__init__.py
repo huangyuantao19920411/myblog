@@ -26,8 +26,8 @@ def create_app(config_name=None):
 
     app = Flask('myblog')
 
-    from werkzeug.contrib.fixers import ProxyFix
-    app.wsgi_app = ProxyFix(app.wsgi_app)
+#    from werkzeug.contrib.fixers import ProxyFix
+#    app.wsgi_app = ProxyFix(app.wsgi_app)
 
     app.config.from_object(config[config_name])
 
